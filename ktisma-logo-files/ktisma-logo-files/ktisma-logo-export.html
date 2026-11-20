@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ktisma Capital Group | Logo export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Hanken+Grotesk:wght@400;600&display=swap">
+<style>
+  :root { --navy: #0F1E36; --ivory: #F4F0E8; --gold-deep: #9C7A3C; --line: #D9D2C3; --muted: #5B6273; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ivory); color: var(--navy); font-family: "Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  main { max-width: 56rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) 1.25rem 4rem; }
+  h1 { margin: 0 0 0.5rem; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.05; }
+  .lead { margin: 0 0 1.75rem; color: var(--muted); max-width: 38rem; }
+  .preview { display: grid; place-items: center; min-height: 15rem; padding: clamp(1rem, 4vw, 2.5rem); border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+  .preview canvas { display: block; max-width: 100%; max-height: 24rem; }
+  .preview.light { background: conic-gradient(#ebe7df 25%, #f8f5ee 0 50%, #ebe7df 0 75%, #f8f5ee 0) 0 0 / 20px 20px; }
+  .preview.dark  { background: conic-gradient(#27334b 25%, #1c2842 0 50%, #27334b 0 75%, #1c2842 0) 0 0 / 20px 20px; }
+  .controls { display: grid; gap: 1.25rem 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 1.75rem 0; }
+  fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+  legend { padding: 0; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+  .seg { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .seg label { position: relative; }
+  .seg input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  .seg span { display: block; padding: 0.5rem 0.85rem; border: 1.5px solid var(--line); border-radius: 4px; background: #fff; font-size: 0.9rem; }
+  .seg input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--ivory); font-weight: 600; }
+  .seg input:focus-visible + span { outline: 3px solid var(--gold-deep); outline-offset: 2px; }
+  button { padding: 0.95rem 1.6rem; font: inherit; font-weight: 600; color: var(--ivory); background: var(--navy); border: 1.5px solid var(--navy); border-radius: 4px; cursor: pointer; }
+  button:hover:not(:disabled) { background: #B8975A; border-color: #B8975A; color: var(--navy); }
+  button:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  #status { margin: 1rem 0 0; color: var(--muted); font-size: 0.9rem; max-width: 40rem; }
+  .note { margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; max-width: 40rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ktisma Capital Group logo</h1>
+  <p class="lead">Choose a version, then download it as a high-resolution PNG. Transparent files can be placed on any background.</p>
+
+  <div id="preview" class="preview"><canvas id="c" role="img" aria-label="Logo preview"></canvas></div>
+
+  <div class="controls">
+    <fieldset><legend>Layout</legend><div class="seg">
+      <label><input type="radio" name="layout" value="stacked" checked><span>Stacked</span></label>
+      <label><input type="radio" name="layout" value="horizontal"><span>Horizontal</span></label>
+      <label><input type="radio" name="layout" value="mark"><span>Mark only</span></label>
+    </div></fieldset>
+    <fieldset><legend>Colors</legend><div class="seg">
+      <label><input type="radio" name="color" value="primary" checked><span>Primary</span></label>
+      <label><input type="radio" name="color" value="reversed"><span>Reversed</span></label>
+      <label><input type="radio" name="color" value="black"><span>Black</span></label>
+      <label><input type="radio" name="color" value="white"><span>White</span></label>
+    </div></fieldset>
+    <fieldset><legend>Background</legend><div class="seg">
+      <label><input type="radio" name="bg" value="transparent" checked><span>Transparent</span></label>
+      <label><input type="radio" name="bg" value="solid"><span>Solid</span></label>
+    </div></fieldset>
+    <fieldset><legend>Size (longest side)</legend><div class="seg">
+      <label><input type="radio" name="size" value="2000"><span>2,000 px</span></label>
+      <label><input type="radio" name="size" value="4000" checked><span>4,000 px</span></label>
+      <label><input type="radio" name="size" value="6000"><span>6,000 px</span></label>
+    </div></fieldset>
+  </div>
+
+  <button id="dl" type="button" disabled>Download PNG</button>
+  <p id="status" role="status">Loading the logo font…</p>
+
+  <p class="note">Primary is for light backgrounds (solid version sits on ivory). Reversed is for dark backgrounds (solid version sits on navy). The checkerboard in the preview is not part of the file.</p>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  const NAVY = '#0F1E36', GOLD = '#B8975A', GOLD_LT = '#C9A66B', GOLD_INK = '#8A6A35', IVORY = '#F4F0E8';
+  const THEMES = {
+    primary:  { main: NAVY,      accent: GOLD,      name: NAVY,      sub: GOLD_INK,  solid: IVORY,     dark: false },
+    reversed: { main: IVORY,     accent: GOLD_LT,   name: IVORY,     sub: GOLD_LT,   solid: NAVY,      dark: true  },
+    black:    { main: '#000000', accent: '#000000', name: '#000000', sub: '#000000', solid: '#FFFFFF', dark: false },
+    white:    { main: '#FFFFFF', accent: '#FFFFFF', name: '#FFFFFF', sub: '#FFFFFF', solid: '#000000', dark: true  }
+  };
+
+  // The K, as 9 horizontal courses (y, height) cut from one outline. Same geometry as the approved logo.
+  const K    = [[0,0],[20,0],[20,44],[49.33,0],[73.33,0],[40,50],[73.33,100],[49.33,100],[20,56],[20,100],[0,100]];
+  const BASE = [[80,20],[63,14],[49,11],[37,9],[27,7]];
+  const TOP  = [[18,6],[11,4],[5,3],[0,2]];
+  const RATIO = 0.7333;                       // mark width / mark height
+  const FAMILY = '"Cormorant Garamond", Georgia, serif';
+  const PAD = 30;                             // clear space around the logo, in design units
+
+  const scratch = document.createElement('canvas').getContext('2d');
+  const NATIVE_TRACKING = 'letterSpacing' in scratch;
+  const fontOf = px => '600 ' + px + 'px ' + FAMILY;
+
+  function prep(ctx, px) {
+    ctx.font = fontOf(px);
+    if ('fontKerning' in ctx) ctx.fontKerning = 'normal';
+    if (NATIVE_TRACKING) ctx.letterSpacing = '0px';
+  }
+  function textWidth(ctx, str, px, tracking) {       // visible width, without trailing space
+    prep(ctx, px);
+    return ctx.measureText(str).width + tracking * (str.length - 1);
+  }
+  function capHeight(ctx, px) {
+    prep(ctx, px);
+    return ctx.measureText('H').actualBoundingBoxAscent;
+  }
+  function drawText(ctx, str, x, y, px, tracking, color) {   // x = left edge of the visible text
+    prep(ctx, px);
+    ctx.fillStyle = color;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    if (NATIVE_TRACKING) {
+      ctx.letterSpacing = tracking + 'px';
+      ctx.fillText(str, x, y);
+      ctx.letterSpacing = '0px';
+      return;
+    }
+    for (let i = 0; i < str.length; i++) {            // fallback for older browsers: letter by letter
+      const before = ctx.measureText(str.slice(0, i + 1)).width - ctx.measureText(str[i]).width;
+      ctx.fillText(str[i], x + before + tracking * i, y);
+    }
+  }
+
+  const markPath = new Path2D();
+  K.forEach(function (p, i) { if (i) markPath.lineTo(p[0], p[1]); else markPath.moveTo(p[0], p[1]); });
+  markPath.closePath();
+
+  function drawMark(ctx, x, y, h, theme) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(h / 100, h / 100);
+    [[BASE, theme.main], [TOP, theme.accent]].forEach(function (group) {
+      ctx.save();
+      ctx.beginPath();
+      group[0].forEach(function (r) { ctx.rect(-1, r[0], 76, r[1]); });
+      ctx.clip();
+      ctx.fillStyle = group[1];
+      ctx.fill(markPath);
+      ctx.restore();
+    });
+    ctx.restore();
+  }
+
+  function layoutOf(kind) {
+    const m = scratch;
+    if (kind === 'mark') {
+      const h = 100, w = h * RATIO;
+      return { W: w + PAD * 2, H: h + PAD * 2, draw: function (ctx, t) { drawMark(ctx, PAD, PAD, h, t); } };
+    }
+    if (kind === 'horizontal') {
+      const mh = 60, mw = mh * RATIO, gap = 21;
+      const ktPx = 37, ktTr = 7.8, cgPx = 14.8, cgTr = 5.3, between = 18.7;
+      const wKT = textWidth(m, 'KTISMA', ktPx, ktTr);
+      const wCG = textWidth(m, 'CAPITAL GROUP', cgPx, cgTr);
+      const capKT = capHeight(m, ktPx), capCG = capHeight(m, cgPx);
+      const top = PAD + (mh - (capKT + between + capCG)) / 2;
+      const tx = PAD + mw + gap;
+      return {
+        W: PAD * 2 + mw + gap + Math.max(wKT, wCG), H: PAD * 2 + mh,
+        draw: function (ctx, t) {
+          drawMark(ctx, PAD, PAD, mh, t);
+          drawText(ctx, 'KTISMA', tx, top + capKT, ktPx, ktTr, t.name);
+          drawText(ctx, 'CAPITAL GROUP', tx, top + capKT + between + capCG, cgPx, cgTr, t.sub);
+        }
+      };
+    }
+    const mh = 70, mw = mh * RATIO;                   // stacked: the approved primary lockup
+    const wKT = textWidth(m, 'KTISMA', 40, 10);
+    const wCG = textWidth(m, 'CAPITAL GROUP', 11, 5);
+    const W = Math.max(wKT, wCG, mw) + PAD * 2, H = 136 + PAD * 2;
+    return {
+      W: W, H: H,
+      draw: function (ctx, t) {
+        const cx = W / 2;
+        drawMark(ctx, cx - mw / 2, PAD, mh, t);
+        drawText(ctx, 'KTISMA', cx - wKT / 2, PAD + 113, 40, 10, t.name);
+        drawText(ctx, 'CAPITAL GROUP', cx - wCG / 2, PAD + 136, 11, 5, t.sub);
+      }
+    };
+  }
+
+  function render(canvas, st, longest) {
+    const L = layoutOf(st.layout), t = THEMES[st.color];
+    const S = longest / Math.max(L.W, L.H);
+    canvas.width = Math.max(1, Math.round(L.W * S));
+    canvas.height = Math.max(1, Math.round(L.H * S));
+    const ctx = canvas.getContext('2d');
+    if (st.bg === 'solid') {
+      ctx.fillStyle = t.solid;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    ctx.setTransform(S, 0, 0, S, 0, 0);
+    L.draw(ctx, t);
+    return { w: canvas.width, h: canvas.height, L: L, S: S };
+  }
+
+  /* ---- page wiring ---- */
+  const $ = function (id) { return document.getElementById(id); };
+  const canvas = $('c'), preview = $('preview'), btn = $('dl'), statusEl = $('status');
+  let fontOK = false;
+
+  function state() {
+    const pick = function (name) { return document.querySelector('input[name="' + name + '"]:checked').value; };
+    return { layout: pick('layout'), color: pick('color'), bg: pick('bg'), size: parseInt(pick('size'), 10) };
+  }
+
+  function refresh() {
+    if (!fontOK) return;
+    const st = state();
+    render(canvas, st, 1400);
+    preview.className = 'preview ' + (st.bg === 'solid' ? 'plain' : (THEMES[st.color].dark ? 'dark' : 'light'));
+    const L = layoutOf(st.layout), S = st.size / Math.max(L.W, L.H);
+    statusEl.textContent = 'File: ' + Math.round(L.W * S) + ' × ' + Math.round(L.H * S) + ' px PNG' +
+      (st.bg === 'transparent' ? ', transparent background.' : ', solid background.');
+  }
+
+  function download() {
+    const st = state();
+    const off = document.createElement('canvas');
+    render(off, st, st.size);
+    off.toBlob(function (blob) {
+      if (!blob) {
+        statusEl.textContent = 'Your browser could not create an image this large. Choose a smaller size and try again.';
+        return;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ktisma-logo-' + st.layout + '-' + st.color + '-' + st.bg + '-' + st.size + 'px.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
+    }, 'image/png');
+  }
+
+  async function init() {
+    try {
+      const faces = await document.fonts.load(fontOf(40), 'KTISMA CAPITAL GROUP');
+      await document.fonts.ready;
+      fontOK = faces.length > 0;
+    } catch (e) { fontOK = false; }
+    if (!fontOK) {
+      statusEl.textContent = 'The logo font (Cormorant Garamond) could not load, so downloads are switched off to keep the logo from being made in the wrong font. Connect to the internet and refresh this page.';
+      return;
+    }
+    btn.disabled = false;
+    refresh();
+  }
+
+  document.querySelectorAll('input[type="radio"]').forEach(function (r) { r.addEventListener('change', refresh); });
+  btn.addEventListener('click', download);
+  window.addEventListener('load', init);
+
+  if (typeof module === 'object' && module.exports) module.exports = { render: render, layoutOf: layoutOf, THEMES: THEMES, init: init };
+})();
+</script>
+</body>
+</html>

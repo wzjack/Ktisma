@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview | Ktisma Capital</title>
+<meta name="description" content="See if you qualify to review this multifamily development opportunity.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+<style>
+  :root {
+    --ink: #13222b;
+    --deep: #0d3a40;
+    --deep-2: #0a2d32;
+    --brass: #c9a56a;
+    --brass-dark: #8f6f3a;
+    --paper: #f4f5f2;
+    --card: #ffffff;
+    --line: #dfe3df;
+    --muted: #5a6a70;
+    --error: #b3261e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+
+  /* Hero */
+  .hero { background: var(--deep); color: #fff; padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+  .topbar { padding: 1.25rem 0; }
+  .brand { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.01em; }
+  .hero-grid { display: grid; gap: 2.5rem; align-items: center; padding-top: clamp(1rem, 4vw, 3rem); }
+  @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
+  h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5.2vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  .sub { margin: 1.25rem 0 0; font-size: 1.15rem; color: #cfe0e2; max-width: 30rem; }
+
+  /* Quiz card */
+  .card {
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 16px;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  }
+  .progress { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; }
+  .progress > span { display: block; height: 100%; width: 0; background: var(--brass); transition: width 0.3s ease; }
+  .step-label { margin: 1rem 0 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--brass-dark); }
+  .q { margin: 0 0 1.1rem; font-family: Georgia, serif; font-size: 1.4rem; line-height: 1.25; }
+  .options { display: grid; gap: 0.65rem; }
+  .opt {
+    width: 100%;
+    text-align: left;
+    padding: 0.9rem 1rem;
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .opt:hover { border-color: var(--brass); }
+  .opt[aria-pressed="true"] { border-color: var(--deep); background: #e9f1f1; font-weight: 600; }
+  .privacy { margin: 1.1rem 0 0; font-size: 0.85rem; color: var(--muted); }
+  .back {
+    margin-top: 0.75rem;
+    padding: 0;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .notice { padding: 1rem; background: #fbf3e3; border-radius: 10px; border: 1px solid #ecd9ae; }
+
+  /* Form */
+  form { display: grid; gap: 0.9rem; }
+  .row { display: grid; gap: 0.9rem; }
+  @media (min-width: 30rem) { .row { grid-template-columns: 1fr 1fr; } }
+  label { display: grid; gap: 0.3rem; font-size: 0.9rem; font-weight: 600; }
+  input[type="text"], input[type="tel"], input[type="email"] {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    font: inherit;
+    font-weight: 400;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input[aria-invalid="true"] { border-color: var(--error); }
+  .field-error { color: var(--error); font-weight: 400; font-size: 0.85rem; min-height: 0; }
+  .consent { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
+  .consent input { margin-top: 0.2rem; }
+  .btn {
+    padding: 0.95rem 1.5rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--brass);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+  }
+  .btn:hover { background: #d4b27c; }
+  .btn:disabled { opacity: 0.6; cursor: wait; }
+
+  /* Content sections */
+  section.block { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  section.block + section.block { border-top: 1px solid var(--line); }
+  h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); letter-spacing: -0.01em; }
+  .lead { margin: 0.5rem 0 0; color: var(--muted); max-width: 36rem; }
+  .stats { display: grid; gap: 1.5rem; margin-top: 2rem; }
+  @media (min-width: 40rem) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat { padding-left: 1rem; border-left: 3px solid var(--brass); }
+  .stat b { display: block; font-family: Georgia, serif; font-size: clamp(2.4rem, 6vw, 3.4rem); line-height: 1; color: var(--deep); }
+  .stat span { display: block; margin-top: 0.4rem; color: var(--muted); }
+
+  details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+  details:first-of-type { border-top: 1px solid var(--line); margin-top: 1.5rem; }
+  summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; }
+  details p { margin: 0.6rem 0 0; color: var(--muted); max-width: 46rem; }
+  .center { text-align: center; }
+
+  footer { padding: 2rem 0 3rem; background: var(--deep-2); color: #a9bdc0; font-size: 0.8rem; }
+  footer p { margin: 0 0 0.75rem; max-width: 60rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .progress > span, .opt { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar"><span class="brand">Ktisma Capital</span></div>
+    <div class="hero-grid">
+      <div>
+        <h1>Access a [XX%] target IRR with a [luxury multifamily development] in [Your Market]</h1>
+        <p class="sub">See if you qualify below.</p>
+      </div>
+
+      <div class="card" id="quiz" aria-live="polite">
+        <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+        <div id="quiz-body"><noscript>Please enable JavaScript to see if you qualify.</noscript></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap">
+      <h2>Return profile</h2>
+      <p class="lead">A glimpse of the target return on this investment. Replace each figure with the numbers from your offering documents.</p>
+      <div class="stats">
+        <div class="stat"><b>[XX%]</b><span>Target net IRR</span></div>
+        <div class="stat"><b>[X.Xx]</b><span>Target equity multiple</span></div>
+        <div class="stat"><b>[X%]</b><span>Preferred return</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>About the sponsor</h2>
+      <p class="lead">Highlights from the sponsor’s track record. Use only figures you can document.</p>
+      <div class="stats">
+        <div class="stat"><b>[$X]</b><span>Real estate acquired or developed</span></div>
+        <div class="stat"><b>[$X]</b><span>Historic transaction volume</span></div>
+        <div class="stat"><b>[XX%]</b><span>Historic average IRR</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>What am I actually investing in?</summary>
+        <p>Describe the legal structure here, such as the type of entity, what it owns, how profits are shared, and how much the sponsor invests alongside investors.</p>
+      </details>
+      <details>
+        <summary>When do I get paid?</summary>
+        <p>Explain the distribution schedule, how the preferred return accrues, and the planned timeline for refinancing or sale.</p>
+      </details>
+      <details>
+        <summary>Can I use 1031 exchange proceeds?</summary>
+        <p>Answer based on your structure and tell visitors to confirm with their own tax advisor.</p>
+      </details>
+      <details>
+        <summary>Can I invest through a self-directed IRA?</summary>
+        <p>Answer based on your structure, mention any tax considerations such as UBTI, and refer visitors to their custodian and tax advisor.</p>
+      </details>
+      <p class="center" style="margin-top:2rem"><a class="btn" href="#quiz">See if you qualify</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>[Legal disclaimer. Have your securities counsel write this section. It should state who is making the offering, which exemption it relies on, that this page is not an offer to sell or a solicitation to buy securities, that projections are targets and not guarantees, and that private investments are illiquid and carry a risk of loss.]</p>
+    <p>© <span id="year">2026</span> Ktisma Capital. <a href="#">Terms</a> · <a href="#">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+  // ---- Settings you can change ----
+  const CONFIG = {
+    // Where to send submitted leads. Examples: a Formspree, Make, Zapier or Cloudflare Worker URL.
+    // The page POSTs JSON to this address. Leave empty to test without sending anything.
+    formEndpoint: "",
+    minimumInvestment: "$50,000"
+  };
+
+  // ---- Questions (edit freely) ----
+  const STEPS = [
+    {
+      id: "investor_type",
+      question: "Which of these best describes you?",
+      options: [
+        "Accredited (net worth): $1M+ excluding primary residence",
+        "Accredited (income): $200k+ ($300k+ with spouse)",
+        "Licensed: Series 7, 65, or 82",
+        "Qualified purchaser: $5M+ investable assets",
+        "None of the above"
+      ],
+      blockOn: "None of the above"
+    },
+    {
+      id: "experience",
+      question: "Have you invested in multifamily developments or real estate before?",
+      options: ["Yes", "No"]
+    },
+    {
+      id: "priority",
+      question: "What matters most to you in your next investment?",
+      options: ["Cash flow", "Equity growth", "Tax efficiency"]
+    },
+    {
+      id: "timeline",
+      question: "When are you looking to invest?",
+      options: ["I’m ready now", "Within the next 30 days", "1 to 3 months", "3+ months"]
+    },
+    {
+      id: "amount",
+      question: "The minimum investment is " + CONFIG.minimumInvestment + ". How much are you looking to place?",
+      options: ["$50k–$100k", "$100k–$250k", "$250k–$1M", "$1M+"]
+    }
+  ];
+
+  const answers = {};
+  let stepIndex = 0;
+  const body = document.getElementById("quiz-body");
+  const bar = document.getElementById("bar");
+
+  function el(tag, props, children) {
+    const node = document.createElement(tag);
+    Object.entries(props || {}).forEach(([k, v]) => {
+      if (k === "class") node.className = v;
+      else if (k === "text") node.textContent = v;
+      else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
+      else node.setAttribute(k, v);
+    });
+    (children || []).forEach(c => node.appendChild(c));
+    return node;
+  }
+
+  function setProgress(fraction) { bar.style.width = Math.round(fraction * 100) + "%"; }
+
+  function privacyLine() {
+    return el("p", { class: "privacy", text: "Accredited investors only. Your info stays private." });
+  }
+
+  function backButton() {
+    if (stepIndex === 0) return null;
+    return el("button", { class: "back", type: "button", text: "Back", onclick: () => { stepIndex--; render(); } });
+  }
+
+  function renderQuestion() {
+    const step = STEPS[stepIndex];
+    setProgress(stepIndex / (STEPS.length + 1));
+    const list = el("div", { class: "options", role: "group", "aria-label": step.question });
+    step.options.forEach(label => {
+      list.appendChild(el("button", {
+        class: "opt",
+        type: "button",
+        "aria-pressed": answers[step.id] === label ? "true" : "false",
+        text: label,
+        onclick: () => choose(step, label)
+      }));
+    });
+    body.replaceChildren(
+      el("p", { class: "step-label", text: "Question " + (stepIndex + 1) + " of " + STEPS.length }),
+      el("h2", { class: "q", text: step.question }),
+      list,
+      privacyLine(),
+      ...[backButton()].filter(Boolean)
+    );
+  }
+
+  function choose(step, label) {
+    answers[step.id] = label;
+    if (step.blockOn && label === step.blockOn) { renderBlocked(); return; }
+    setTimeout(() => { stepIndex++; render(); }, 150);
+  }
+
+  function renderBlocked() {
+    setProgress(0);
+    body.replaceChildren(
+      el("h2", { class: "q", text: "Thanks for your interest" }),
+      el("div", { class: "notice", text: "This opportunity is open to accredited investors only, so we can’t take your details right now." }),
+      el("button", { class: "back", type: "button", text: "Change my answer", onclick: () => { delete answers.investor_type; stepIndex = 0; render(); } })
+    );
+  }
+
+  function renderForm() {
+    setProgress(STEPS.length / (STEPS.length + 1));
+    const fields = [
+      ["first_name", "First name", "text", "given-name"],
+      ["last_name", "Last name", "text", "family-name"],
+      ["phone", "Phone", "tel", "tel"],
+      ["email", "Email", "email", "email"]
+    ];
+    const make = ([name, label, type, auto]) => {
+      const input = el("input", { type, name, id: name, required: "", autocomplete: auto });
+      const err = el("span", { class: "field-error", id: name + "-err" });
+      return el("label", { for: name }, [document.createTextNode(label + " *"), input, err]);
+    };
+    const consent = el("label", { class: "consent" }, [
+      el("input", { type: "checkbox", name: "consent", required: "" }),
+      el("span", { text: "I agree to receive texts and phone calls from Ktisma Capital about my inquiry. Consent is not a condition of any purchase. Msg & data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help. See our Terms and Privacy Policy." })
+    ]);
+    const submit = el("button", { class: "btn", type: "submit", text: "Send me the details" });
+    const status = el("p", { class: "field-error", id: "form-status", role: "alert" });
+
+    const form = el("form", { novalidate: "" }, [
+      el("div", { class: "row" }, [make(fields[0]), make(fields[1])]),
+      make(fields[2]),
+      make(fields[3]),
+      consent,
+      submit,
+      status
+    ]);
+    form.addEventListener("submit", e => { e.preventDefault(); handleSubmit(form, submit, status); });
+
+    body.replaceChildren(
+      el("p", { class: "step-label", text: "Last step" }),
+      el("h2", { class: "q", text: "Leave your details and we’ll send you material on this opportunity." }),
+      form,
+      privacyLine(),
+      el("button", { class: "back", type: "button", text: "Back", onclick: () => { stepIndex--; render(); } })
+    );
+  }
+
+  function validate(form) {
+    let ok = true;
+    const rules = {
+      first_name: v => v.trim() ? "" : "Enter your first name.",
+      last_name: v => v.trim() ? "" : "Enter your last name.",
+      phone: v => v.replace(/\D/g, "").length >= 10 ? "" : "Enter a phone number with area code.",
+      email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Enter a valid email address."
+    };
+    Object.entries(rules).forEach(([name, rule]) => {
+      const input = form.elements[name];
+      const msg = rule(input.value);
+      document.getElementById(name + "-err").textContent = msg;
+      input.setAttribute("aria-invalid", msg ? "true" : "false");
+      if (msg) ok = false;
+    });
+    if (!form.elements.consent.checked) {
+      document.getElementById("form-status").textContent = "Please tick the consent box to continue.";
+      ok = false;
+    }
+    return ok;
+  }
+
+  async function handleSubmit(form, submit, status) {
+    status.textContent = "";
+    if (!validate(form)) return;
+    const payload = Object.assign({}, answers, {
+      first_name: form.elements.first_name.value.trim(),
+      last_name: form.elements.last_name.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      email: form.elements.email.value.trim(),
+      submitted_at: new Date().toISOString(),
+      page: location.href
+    });
+    submit.disabled = true;
+    try {
+      if (CONFIG.formEndpoint) {
+        const res = await fetch(CONFIG.formEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error("Request failed: " + res.status);
+      } else {
+        console.log("No formEndpoint set. Lead not sent:", payload);
+      }
+      stepIndex = STEPS.length + 1;
+      render();
+    } catch (err) {
+      status.textContent = "We couldn’t send your details. Check your connection and try again.";
+      submit.disabled = false;
+    }
+  }
+
+  function renderThanks() {
+    setProgress(1);
+    body.replaceChildren(
+      el("h2", { class: "q", text: "Thank you" }),
+      el("p", { text: "We’ve received your details and will send the material on this opportunity shortly." })
+    );
+  }
+
+  function render() {
+    if (stepIndex < STEPS.length) renderQuestion();
+    else if (stepIndex === STEPS.length) renderForm();
+    else renderThanks();
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  render();
+</script>
+</body>
+</html>
