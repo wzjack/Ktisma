@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Designer & Developer</title>
+<meta name="description" content="A short description of who you are and what you do.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
+<style>
+  :root {
+    --bg: #eef1f5;
+    --ink: #1b2430;
+    --muted: #55606f;
+    --accent: #2f5bff;
+    --mark: #ffd23f;
+    --line: #c9d0da;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161d;
+      --ink: #e8ecf2;
+      --muted: #9aa5b4;
+      --accent: #7f9cff;
+      --mark: #ffd23f;
+      --line: #2a3340;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  header { padding: 1.5rem 0; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .brand { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 1.5rem; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  .hero { padding: clamp(3rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem); }
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 12vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+    max-width: 12ch;
+  }
+  h1 .hl {
+    background: linear-gradient(transparent 62%, var(--mark) 62% 92%, transparent 92%);
+    padding: 0 0.05em;
+  }
+  .lede {
+    margin: 2rem 0 0;
+    max-width: 34rem;
+    font-size: 1.25rem;
+    color: var(--muted);
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.15s ease;
+  }
+  .cta:hover { transform: translateY(-2px); }
+  @media (prefers-color-scheme: dark) { .cta { color: #0b1020; } }
+
+  section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--line); }
+  h2 { margin: 0 0 1.5rem; font-size: 1.75rem; letter-spacing: -0.02em; }
+  .two { display: grid; grid-template-columns: 1fr; gap: 1.5rem 3rem; }
+  @media (min-width: 48rem) { .two { grid-template-columns: 1fr 2fr; } }
+
+  .work { list-style: none; margin: 0; padding: 0; }
+  .work li { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  .work li:first-child { padding-top: 0; }
+  .work h3 { margin: 0; font-size: 1.15rem; }
+  .work p { margin: 0.25rem 0 0; color: var(--muted); max-width: 36rem; }
+
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">yourname</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>I build <span class="hl">useful</span> things for the web.</h1>
+      <p class="lede">I’m Your Name, an independent designer and developer. Replace this line with one or two sentences about what you do and who you do it for.</p>
+      <a class="cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap two">
+      <h2>Selected work</h2>
+      <ul class="work">
+        <li>
+          <h3>Project one</h3>
+          <p>A sentence on what it is, who it was for, and what you did.</p>
+        </li>
+        <li>
+          <h3>Project two</h3>
+          <p>A sentence on what it is, who it was for, and what you did.</p>
+        </li>
+        <li>
+          <h3>Project three</h3>
+          <p>A sentence on what it is, who it was for, and what you did.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap two">
+      <h2>About</h2>
+      <p>Write a short paragraph here: where you’re based, what you care about, and what you’ve worked on. Keep it plain and specific. Visitors should know in ten seconds whether you’re the right person for them.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap two">
+      <h2>Contact</h2>
+      <p>The best way to reach me is email: <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Your Name</span>
+    <span>Built as a single static page.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
