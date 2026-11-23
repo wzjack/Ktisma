@@ -1,244 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Overview | Ktisma Capital</title>
-<meta name="description" content="See if you qualify to review this multifamily development opportunity.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><clipPath id='a'><rect y='73' width='80' height='27'/><rect y='51' width='80' height='18'/><rect y='34' width='80' height='13'/><rect y='20' width='80' height='10'/></clipPath><clipPath id='b'><rect y='9' width='80' height='7'/><rect width='80' height='5'/></clipPath></defs><rect width='64' height='64' rx='13' fill='%230F1E36'/><g transform='translate(18.05 13) scale(.38)'><polygon clip-path='url(%23a)' fill='%23F4F0E8' points='0,0 20,0 20,44 49.33,0 73.33,0 40,50 73.33,100 49.33,100 20,56 20,100 0,100'/><polygon clip-path='url(%23b)' fill='%23C9A66B' points='0,0 20,0 20,44 49.33,0 73.33,0 40,50 73.33,100 49.33,100 20,56 20,100 0,100'/></g></svg>">
-<meta name="theme-color" content="#0F1E36">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
-<style>
-  :root {
-    /* Palette taken from the Ktisma logo */
-    --navy: #0F1E36;
-    --navy-deep: #0A1629;
-    --gold: #B8975A;
-    --gold-light: #C9A66B;
-    --gold-deep: #9C7A3C;
-    --gold-ink: #7A5C2B;
-    --ivory: #F4F0E8;
-    --card: #ffffff;
-    --line: #D9D2C3;
-    --track: #E8E2D4;
-    --muted: #5B6273;
-    --error: #B3261E;
-    --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-    --sans: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
-    --focus: var(--gold-deep);
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--ivory);
-    color: var(--navy);
-    font-family: var(--sans);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  .topbar, footer { --focus: var(--gold-light); }
-  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
-  .serif { font-family: var(--serif); }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview | Ktisma Capital</title>
+  <meta name="description" content="See if you qualify to review this multifamily development opportunity.">
 
-  /* Logo lockup (mark + wordmark) */
-  .brand { display: inline-flex; align-items: center; gap: 0.95rem; color: var(--ivory); text-decoration: none; }
-  .mark { flex: none; width: 2.017rem; height: 2.75rem; color: var(--ivory); --mark-accent: var(--gold-light); }
-  .wordmark { display: grid; gap: 0.5rem; }
-  .wm-name { font-family: var(--serif); font-weight: 600; font-size: 1.7rem; line-height: 0.9; letter-spacing: 0.21em; }
-  .wm-sub { font-family: var(--serif); font-weight: 600; font-size: 0.68rem; line-height: 1; letter-spacing: 0.36em; color: var(--gold-light); }
+  <!-- Icons, manifest and browser color -->
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="theme-color" content="#0E1F3B">
 
-  /* Hero */
-  .hero { position: relative; background: var(--navy); color: var(--ivory); padding-bottom: clamp(5.5rem, 10vw, 8rem); }
-  .topbar { padding: clamp(1.25rem, 3vw, 2rem) 0; }
-  .hero-grid { display: grid; gap: 2.5rem; align-items: center; padding-top: clamp(1rem, 4vw, 3rem); }
-  @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
-  h1 {
-    margin: 0;
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: clamp(2.5rem, 5.6vw, 4.1rem);
-    line-height: 1.04;
-    letter-spacing: -0.005em;
-  }
-  .sub { margin: 1.25rem 0 0; font-size: 1.15rem; color: #C9CFDB; max-width: 30rem; }
+  <!-- Social sharing: replace YOUR-DOMAIN with your domain, then remove these comment markers
+  <meta property="og:title" content="Overview | Ktisma Capital">
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/social/og-image-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  -->
 
-  /* Courses: the logo's floors, rising from a solid base into the hero */
-  .courses { position: absolute; left: 0; right: 0; bottom: -1px; height: clamp(3rem, 6vw, 4.5rem); pointer-events: none; }
-  .courses svg { display: block; width: 100%; height: 100%; }
-  .courses .i { fill: var(--ivory); }
-  .courses .g { fill: var(--gold-light); }
-
-  /* Quiz card */
-  .card {
-    background: var(--card);
-    color: var(--navy);
-    border-radius: 6px;
-    border-top: 3px solid var(--gold);
-    padding: clamp(1.25rem, 3vw, 2.25rem);
-    box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.5);
-  }
-  .progress { height: 4px; background: var(--track); border-radius: 2px; overflow: hidden; }
-  .progress > span { display: block; height: 100%; width: 0; background: var(--gold); transition: width 0.3s ease; }
-  .step-label { margin: 1rem 0 0.35rem; font-size: 0.9rem; font-weight: 600; color: var(--gold-ink); }
-  .q { margin: 0 0 1.1rem; font-family: var(--serif); font-weight: 600; font-size: 1.7rem; line-height: 1.15; letter-spacing: 0; }
-  .options { display: grid; gap: 0.65rem; }
-  .opt {
-    width: 100%;
-    text-align: left;
-    padding: 0.9rem 1rem;
-    font: inherit;
-    color: inherit;
-    background: #fff;
-    border: 1.5px solid var(--line);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-  .opt:hover { border-color: var(--gold); background: #FBF9F4; }
-  .opt[aria-pressed="true"] { border-color: var(--navy); background: var(--ivory); font-weight: 600; }
-  .privacy { margin: 1.1rem 0 0; font-size: 0.85rem; color: var(--muted); }
-  .back {
-    margin-top: 0.75rem;
-    padding: 0;
-    font: inherit;
-    font-size: 0.9rem;
-    color: var(--muted);
-    background: none;
-    border: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
-  }
-  .back:hover { color: var(--navy); }
-  .notice { padding: 1rem; background: #F7EFDC; border-radius: 4px; border: 1px solid #E3D2AA; }
-
-  /* Form */
-  form { display: grid; gap: 0.9rem; }
-  .row { display: grid; gap: 0.9rem; }
-  @media (min-width: 30rem) { .row { grid-template-columns: 1fr 1fr; } }
-  label { display: grid; gap: 0.3rem; font-size: 0.9rem; font-weight: 600; }
-  input[type="text"], input[type="tel"], input[type="email"] {
-    width: 100%;
-    padding: 0.8rem 0.9rem;
-    font: inherit;
-    font-weight: 400;
-    border: 1.5px solid var(--line);
-    border-radius: 4px;
-    background: #fff;
-    color: var(--navy);
-  }
-  input[type="text"]:focus-visible, input[type="tel"]:focus-visible, input[type="email"]:focus-visible { border-color: var(--navy); }
-  input[aria-invalid="true"] { border-color: var(--error); }
-  .field-error { color: var(--error); font-weight: 400; font-size: 0.85rem; min-height: 0; }
-  .consent { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
-  .consent input { margin-top: 0.2rem; accent-color: var(--navy); }
-  .btn {
-    padding: 0.95rem 1.6rem;
-    font: inherit;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: var(--ivory);
-    background: var(--navy);
-    border: 1.5px solid var(--navy);
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  }
-  .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-  .btn:disabled { opacity: 0.6; cursor: wait; }
-
-  /* Content sections */
-  section.block { padding: clamp(3rem, 7vw, 5.5rem) 0; }
-  section.block + section.block { border-top: 1px solid var(--line); }
-  h2 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: clamp(1.9rem, 3.8vw, 2.7rem); line-height: 1.1; letter-spacing: -0.005em; }
-  .lead { margin: 0.75rem 0 0; color: var(--muted); max-width: 36rem; }
-  .stats { display: grid; gap: 1.75rem; margin-top: 2.25rem; }
-  @media (min-width: 40rem) { .stats { grid-template-columns: repeat(3, 1fr); } }
-  .stat { padding-left: 1.25rem; border-left: 2px solid var(--gold); }
-  .stat b { display: block; font-family: var(--serif); font-weight: 600; font-variant-numeric: lining-nums; font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1; color: var(--navy); }
-  .stat span { display: block; margin-top: 0.5rem; color: var(--muted); }
-
-  details { border-bottom: 1px solid var(--line); padding: 1.1rem 0; }
-  details:first-of-type { border-top: 1px solid var(--line); margin-top: 1.75rem; }
-  summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    cursor: pointer;
-    list-style: none;
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: 1.35rem;
-    line-height: 1.25;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; flex: none; font-family: var(--sans); font-weight: 400; font-size: 1.5rem; line-height: 1; color: var(--gold-ink); }
-  details[open] summary::after { content: "\2212"; }
-  details p { margin: 0.7rem 0 0; color: var(--muted); max-width: 46rem; }
-  .center { text-align: center; }
-
-  /* Footer */
-  footer { padding: 3rem 0 3.5rem; background: var(--navy-deep); color: #AEB6C6; font-size: 0.85rem; }
-  .foot-top { padding-bottom: 1.75rem; margin-bottom: 1.75rem; border-bottom: 1px solid rgba(244, 240, 232, 0.14); }
-  footer .mark { width: 1.65rem; height: 2.25rem; }
-  footer .wm-name { font-size: 1.4rem; }
-  footer p { margin: 0 0 0.75rem; max-width: 60rem; }
-  footer p a { color: #D8DCE6; text-underline-offset: 3px; }
-  footer p a:hover { color: var(--gold-light); }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .progress > span, .opt, .btn { transition: none; }
-  }
-  /* One moment of motion: the courses build up from the base on page load */
-  @media (prefers-reduced-motion: no-preference) {
-    .courses rect { animation: rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-    .courses rect:nth-child(2) { animation-delay: 0.07s; }
-    .courses rect:nth-child(3) { animation-delay: 0.14s; }
-    .courses rect:nth-child(4) { animation-delay: 0.21s; }
-    .courses rect:nth-child(5) { animation-delay: 0.28s; }
-    .courses rect:nth-child(6) { animation-delay: 0.35s; }
-    .courses rect:nth-child(7) { animation-delay: 0.42s; }
-    .courses rect:nth-child(8) { animation-delay: 0.49s; }
-    .courses rect:nth-child(9) { animation-delay: 0.56s; }
-  }
-  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-
-  /* Hanken Grotesk for section headings, stat numbers and FAQ questions.
-     The quiz questions (.q) keep their own serif rule, which outranks h2. */
-  h2 { font-family: var(--sans); font-size: clamp(1.7rem, 3.4vw, 2.3rem); letter-spacing: -0.02em; line-height: 1.15; }
-  .stat b { font-family: var(--sans); font-size: clamp(2.4rem, 5.2vw, 3.4rem); letter-spacing: -0.03em; }
-  summary { font-family: var(--sans); font-size: 1.1rem; line-height: 1.4; }
-</style>
+  <!-- Fonts (Google Fonts) and styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <clipPath id="kc-a"><rect y="80" width="80" height="20"/><rect y="63" width="80" height="14"/><rect y="49" width="80" height="11"/><rect y="37" width="80" height="9"/><rect y="27" width="80" height="7"/></clipPath>
-    <clipPath id="kc-b"><rect y="18" width="80" height="6"/><rect y="11" width="80" height="4"/><rect y="5" width="80" height="3"/><rect width="80" height="2"/></clipPath>
-    <g id="ktisma-mark">
-      <polygon clip-path="url(#kc-a)" fill="currentColor" points="0,0 20,0 20,44 49.33,0 73.33,0 40,50 73.33,100 49.33,100 20,56 20,100 0,100"/>
-      <polygon clip-path="url(#kc-b)" style="fill: var(--mark-accent, #B8975A)" points="0,0 20,0 20,44 49.33,0 73.33,0 40,50 73.33,100 49.33,100 20,56 20,100 0,100"/>
-    </g>
-  </defs>
-</svg>
-
+<!-- ===== Header and hero: logo, headline, qualification quiz ===== -->
 <header class="hero">
   <div class="wrap">
     <div class="topbar">
-      <a class="brand" href="#" aria-label="Ktisma Capital Group, back to top">
-        <svg class="mark" viewBox="0 0 73.33 100" aria-hidden="true" focusable="false"><use href="#ktisma-mark"/></svg>
-        <span class="wordmark" aria-hidden="true"><span class="wm-name">KTISMA</span><span class="wm-sub">CAPITAL GROUP</span></span>
+      <a class="brand" href="./">
+        <img class="logo" src="assets/logo/ktisma-logo-on-dark.svg" alt="Ktisma Capital Group" width="293" height="60">
       </a>
     </div>
     <div class="hero-grid">
@@ -255,20 +51,18 @@
   </div>
   <div class="courses" aria-hidden="true">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
-      <rect class="i" y="80" width="100" height="20"/>
-      <rect class="i" y="63" width="100" height="14"/>
-      <rect class="i" y="49" width="100" height="11"/>
-      <rect class="i" y="37" width="100" height="9"/>
-      <rect class="i" y="27" width="100" height="7"/>
-      <rect class="g" y="18" width="100" height="6"/>
-      <rect class="g" y="11" width="100" height="4"/>
-      <rect class="g" y="5" width="100" height="3"/>
-      <rect class="g" y="0" width="100" height="2"/>
+      <rect class="i" y="70.14" width="100" height="29.93"/>
+      <rect class="i" y="51.51" width="100" height="14"/>
+      <rect class="i" y="33.28" width="100" height="13.6"/>
+      <rect class="g" y="15.26" width="100" height="13.39"/>
+      <rect class="g" y="0" width="100" height="10.63"/>
     </svg>
   </div>
 </header>
 
+<!-- ===== Content ===== -->
 <main>
+  <!-- Return profile: replace the [bracketed] figures with real numbers -->
   <section class="block">
     <div class="wrap">
       <h2>Return profile</h2>
@@ -281,6 +75,7 @@
     </div>
   </section>
 
+  <!-- About the sponsor -->
   <section class="block">
     <div class="wrap">
       <h2>About the sponsor</h2>
@@ -293,6 +88,22 @@
     </div>
   </section>
 
+  <!-- What we do: icons live in assets/icons -->
+  <section class="block">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <ul class="caps">
+        <li><img src="assets/icons/ktisma-icon-acquisitions.svg" alt="" width="84" height="84"><span>Acquisitions</span></li>
+        <li><img src="assets/icons/ktisma-icon-development.svg" alt="" width="84" height="84"><span>Development</span></li>
+        <li><img src="assets/icons/ktisma-icon-value-creation.svg" alt="" width="84" height="84"><span>Value creation</span></li>
+        <li><img src="assets/icons/ktisma-icon-investment-management.svg" alt="" width="84" height="84"><span>Investment management</span></li>
+        <li><img src="assets/icons/ktisma-icon-investor-partnerships.svg" alt="" width="84" height="84"><span>Investor partnerships</span></li>
+        <li><img src="assets/icons/ktisma-icon-long-term-returns.svg" alt="" width="84" height="84"><span>Long-term returns</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="block">
     <div class="wrap">
       <h2>Frequently asked questions</h2>
@@ -317,12 +128,12 @@
   </section>
 </main>
 
+<!-- ===== Footer ===== -->
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a class="brand" href="#" aria-label="Ktisma Capital Group, back to top">
-        <svg class="mark" viewBox="0 0 73.33 100" aria-hidden="true" focusable="false"><use href="#ktisma-mark"/></svg>
-        <span class="wordmark" aria-hidden="true"><span class="wm-name">KTISMA</span><span class="wm-sub">CAPITAL GROUP</span></span>
+      <a class="brand" href="./">
+        <img class="logo" src="assets/logo/ktisma-logo-on-dark.svg" alt="Ktisma Capital Group" width="293" height="60">
       </a>
     </div>
     <p>[Legal disclaimer. Have your securities counsel write this section. It should state who is making the offering, which exemption it relies on, that this page is not an offer to sell or a solicitation to buy securities, that projections are targets and not guarantees, and that private investments are illiquid and carry a risk of loss.]</p>
@@ -330,224 +141,8 @@
   </div>
 </footer>
 
-<script>
-  // ---- Settings you can change ----
-  const CONFIG = {
-    // Where to send submitted leads. Examples: a Formspree, Make, Zapier or Cloudflare Worker URL.
-    // The page POSTs JSON to this address. Leave empty to test without sending anything.
-    formEndpoint: "",
-    minimumInvestment: "$50,000"
-  };
-
-  // ---- Questions (edit freely) ----
-  const STEPS = [
-    {
-      id: "investor_type",
-      question: "Which of these best describes you?",
-      options: [
-        "Accredited (net worth): $1M+ excluding primary residence",
-        "Accredited (income): $200k+ ($300k+ with spouse)",
-        "Licensed: Series 7, 65, or 82",
-        "Qualified purchaser: $5M+ investable assets",
-        "None of the above"
-      ],
-      blockOn: "None of the above"
-    },
-    {
-      id: "experience",
-      question: "Have you invested in multifamily developments or real estate before?",
-      options: ["Yes", "No"]
-    },
-    {
-      id: "priority",
-      question: "What matters most to you in your next investment?",
-      options: ["Cash flow", "Equity growth", "Tax efficiency"]
-    },
-    {
-      id: "timeline",
-      question: "When are you looking to invest?",
-      options: ["I’m ready now", "Within the next 30 days", "1 to 3 months", "3+ months"]
-    },
-    {
-      id: "amount",
-      question: "The minimum investment is " + CONFIG.minimumInvestment + ". How much are you looking to place?",
-      options: ["$50k–$100k", "$100k–$250k", "$250k–$1M", "$1M+"]
-    }
-  ];
-
-  const answers = {};
-  let stepIndex = 0;
-  const body = document.getElementById("quiz-body");
-  const bar = document.getElementById("bar");
-
-  function el(tag, props, children) {
-    const node = document.createElement(tag);
-    Object.entries(props || {}).forEach(([k, v]) => {
-      if (k === "class") node.className = v;
-      else if (k === "text") node.textContent = v;
-      else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
-      else node.setAttribute(k, v);
-    });
-    (children || []).forEach(c => node.appendChild(c));
-    return node;
-  }
-
-  function setProgress(fraction) { bar.style.width = Math.round(fraction * 100) + "%"; }
-
-  function privacyLine() {
-    return el("p", { class: "privacy", text: "Accredited investors only. Your info stays private." });
-  }
-
-  function backButton() {
-    if (stepIndex === 0) return null;
-    return el("button", { class: "back", type: "button", text: "Back", onclick: () => { stepIndex--; render(); } });
-  }
-
-  function renderQuestion() {
-    const step = STEPS[stepIndex];
-    setProgress(stepIndex / (STEPS.length + 1));
-    const list = el("div", { class: "options", role: "group", "aria-label": step.question });
-    step.options.forEach(label => {
-      list.appendChild(el("button", {
-        class: "opt",
-        type: "button",
-        "aria-pressed": answers[step.id] === label ? "true" : "false",
-        text: label,
-        onclick: () => choose(step, label)
-      }));
-    });
-    body.replaceChildren(
-      el("p", { class: "step-label", text: "Question " + (stepIndex + 1) + " of " + STEPS.length }),
-      el("h2", { class: "q", text: step.question }),
-      list,
-      privacyLine(),
-      ...[backButton()].filter(Boolean)
-    );
-  }
-
-  function choose(step, label) {
-    answers[step.id] = label;
-    if (step.blockOn && label === step.blockOn) { renderBlocked(); return; }
-    setTimeout(() => { stepIndex++; render(); }, 150);
-  }
-
-  function renderBlocked() {
-    setProgress(0);
-    body.replaceChildren(
-      el("h2", { class: "q", text: "Thanks for your interest" }),
-      el("div", { class: "notice", text: "This opportunity is open to accredited investors only, so we can’t take your details right now." }),
-      el("button", { class: "back", type: "button", text: "Change my answer", onclick: () => { delete answers.investor_type; stepIndex = 0; render(); } })
-    );
-  }
-
-  function renderForm() {
-    setProgress(STEPS.length / (STEPS.length + 1));
-    const fields = [
-      ["first_name", "First name", "text", "given-name"],
-      ["last_name", "Last name", "text", "family-name"],
-      ["phone", "Phone", "tel", "tel"],
-      ["email", "Email", "email", "email"]
-    ];
-    const make = ([name, label, type, auto]) => {
-      const input = el("input", { type, name, id: name, required: "", autocomplete: auto });
-      const err = el("span", { class: "field-error", id: name + "-err" });
-      return el("label", { for: name }, [document.createTextNode(label + " *"), input, err]);
-    };
-    const consent = el("label", { class: "consent" }, [
-      el("input", { type: "checkbox", name: "consent", required: "" }),
-      el("span", { text: "I agree to receive texts and phone calls from Ktisma Capital about my inquiry. Consent is not a condition of any purchase. Msg & data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help. See our Terms and Privacy Policy." })
-    ]);
-    const submit = el("button", { class: "btn", type: "submit", text: "Send me the details" });
-    const status = el("p", { class: "field-error", id: "form-status", role: "alert" });
-
-    const form = el("form", { novalidate: "" }, [
-      el("div", { class: "row" }, [make(fields[0]), make(fields[1])]),
-      make(fields[2]),
-      make(fields[3]),
-      consent,
-      submit,
-      status
-    ]);
-    form.addEventListener("submit", e => { e.preventDefault(); handleSubmit(form, submit, status); });
-
-    body.replaceChildren(
-      el("p", { class: "step-label", text: "Last step" }),
-      el("h2", { class: "q", text: "Leave your details and we’ll send you material on this opportunity." }),
-      form,
-      privacyLine(),
-      el("button", { class: "back", type: "button", text: "Back", onclick: () => { stepIndex--; render(); } })
-    );
-  }
-
-  function validate(form) {
-    let ok = true;
-    const rules = {
-      first_name: v => v.trim() ? "" : "Enter your first name.",
-      last_name: v => v.trim() ? "" : "Enter your last name.",
-      phone: v => v.replace(/\D/g, "").length >= 10 ? "" : "Enter a phone number with area code.",
-      email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Enter a valid email address."
-    };
-    Object.entries(rules).forEach(([name, rule]) => {
-      const input = form.elements[name];
-      const msg = rule(input.value);
-      document.getElementById(name + "-err").textContent = msg;
-      input.setAttribute("aria-invalid", msg ? "true" : "false");
-      if (msg) ok = false;
-    });
-    if (!form.elements.consent.checked) {
-      document.getElementById("form-status").textContent = "Please tick the consent box to continue.";
-      ok = false;
-    }
-    return ok;
-  }
-
-  async function handleSubmit(form, submit, status) {
-    status.textContent = "";
-    if (!validate(form)) return;
-    const payload = Object.assign({}, answers, {
-      first_name: form.elements.first_name.value.trim(),
-      last_name: form.elements.last_name.value.trim(),
-      phone: form.elements.phone.value.trim(),
-      email: form.elements.email.value.trim(),
-      submitted_at: new Date().toISOString(),
-      page: location.href
-    });
-    submit.disabled = true;
-    try {
-      if (CONFIG.formEndpoint) {
-        const res = await fetch(CONFIG.formEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        if (!res.ok) throw new Error("Request failed: " + res.status);
-      } else {
-        console.log("No formEndpoint set. Lead not sent:", payload);
-      }
-      stepIndex = STEPS.length + 1;
-      render();
-    } catch (err) {
-      status.textContent = "We couldn’t send your details. Check your connection and try again.";
-      submit.disabled = false;
-    }
-  }
-
-  function renderThanks() {
-    setProgress(1);
-    body.replaceChildren(
-      el("h2", { class: "q", text: "Thank you" }),
-      el("p", { text: "We’ve received your details and will send the material on this opportunity shortly." })
-    );
-  }
-
-  function render() {
-    if (stepIndex < STEPS.length) renderQuestion();
-    else if (stepIndex === STEPS.length) renderForm();
-    else renderThanks();
-  }
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-  render();
-</script>
+<!-- Scripts: config.js first (settings and quiz questions), then quiz.js (logic) -->
+<script src="js/config.js"></script>
+<script src="js/quiz.js"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 136" width="136" height="136" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>Value Creation</title>
+<g transform="translate(8 8)">
+<rect x="12" y="90" width="15" height="14" fill="#0E1F3B" stroke="none"/>
+<rect x="34" y="78" width="15" height="26" fill="#0E1F3B" stroke="none"/>
+<rect x="56" y="64" width="15" height="40" fill="#0E1F3B" stroke="none"/>
+<rect x="78" y="48" width="15" height="56" fill="#0E1F3B" stroke="none"/>
+<path d="M12 70 C36 66 58 50 86 28" fill="none" stroke="#B08A4A" stroke-width="3.8"/>
+<polygon points="100,16 94,31 84,19" fill="#B08A4A" stroke="none"/>
+</g></svg>

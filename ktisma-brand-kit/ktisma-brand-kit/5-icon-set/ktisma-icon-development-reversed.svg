@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 136" width="136" height="136" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>Development</title>
+<g transform="translate(8 8)">
+<polyline points="8,104 112,104" stroke="#F7F3E9" stroke-width="3.6"/>
+<polyline points="26,104 26,26" stroke="#C9A55F" stroke-width="3.2"/>
+<polyline points="40,104 40,26" stroke="#C9A55F" stroke-width="3.2"/>
+<polyline points="26,104 40,92 26,80 40,68 26,56 40,44 26,32" stroke="#C9A55F" stroke-width="2.2"/>
+<polygon points="26,26 33,9 40,26" fill="none" stroke="#C9A55F" stroke-width="3.0"/>
+<polyline points="8,26 94,26" stroke="#C9A55F" stroke-width="3.8"/>
+<polyline points="33,9 8,26" stroke="#C9A55F" stroke-width="2.2"/>
+<polyline points="33,9 90,26" stroke="#C9A55F" stroke-width="2.2"/>
+<rect x="8" y="26" width="12" height="11" fill="#C9A55F" stroke="none"/>
+<polyline points="78,26 78,45" stroke="#C9A55F" stroke-width="2.4"/>
+<circle cx="78" cy="49" r="3.2" fill="none" stroke="#C9A55F" stroke-width="2.4"/>
+<rect x="56" y="90" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<rect x="70" y="90" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<rect x="84" y="90" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<rect x="63" y="76" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<rect x="77" y="76" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<rect x="70" y="62" width="14" height="14" fill="none" stroke="#F7F3E9" stroke-width="2.6"/>
+<polyline points="63,90 63,104" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="77,90 77,104" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="91,90 91,104" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="70,76 70,90" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="84,76 84,90" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="77,62 77,76" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="56,97 70,97" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="70,97 84,97" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="84,97 98,97" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="63,83 77,83" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="77,83 91,83" stroke="#F7F3E9" stroke-width="1.8"/>
+<polyline points="70,69 84,69" stroke="#F7F3E9" stroke-width="1.8"/>
+</g></svg>
